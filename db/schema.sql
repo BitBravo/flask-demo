@@ -69,7 +69,7 @@ LOCK TABLES `Orders` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Product`
+-- Table structure for table `Products`
 --
 
 DROP TABLE IF EXISTS `Product`;

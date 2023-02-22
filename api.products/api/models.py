@@ -26,16 +26,7 @@ PRODUCT_STATUSES = {
     'InActive': 'InActive'
 }
 
-ORDER_STATUSES = {
-    'Queued': 'Queued',
-    'InProgress': 'InProgress',
-    'QA': 'QA',
-    'Cancelled': 'Cancelled',
-    'Complete': 'Complete'
-}
-
 PRODUCT_STATUSES_SET = set(PRODUCT_STATUSES.values())
-ORDER_STATUSES_SET = set(ORDER_STATUSES.values())
 
 class EnumField(Field):
     field_type='enum'
@@ -61,14 +52,6 @@ class BaseModel(Model):
     class Meta:
         database = db
 
-class Customer(BaseModel):
-    CustomerID = IntegerField(primary_key=True)
-    CustomerFirstName = CharField(100, null=False)
-    CustomerLastName = CharField(100, null=False)
-    
-    class Meta:
-        table_name = 'Customer'
-
 class Product(BaseModel):
     ProductID = IntegerField(primary_key=True)
     ProductName = CharField(100, null=False)
@@ -77,12 +60,3 @@ class Product(BaseModel):
     
     class Meta:
         table_name = 'Product'
-
-class Orders(BaseModel):
-    OrderID = IntegerField(primary_key=True)
-    OrderStatus = EnumField(ORDER_STATUSES_SET, null=False)
-    ProductID = ForeignKeyField(Product, field='ProductID', null=False, column_name='ProductID')
-    CustomerID = ForeignKeyField(Customer, field='CustomerID', null=False, column_name='CustomerID')
-    
-    class Meta:
-        table_name = 'Orders'

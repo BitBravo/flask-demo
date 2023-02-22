@@ -92,7 +92,7 @@ CREATE TABLE `Product` (
 
 LOCK TABLES `Product` WRITE;
 /*!40000 ALTER TABLE `Product` DISABLE KEYS */;
-INSERT INTO `Product` VALUES (1,'Hat','t','Active'),(2,'Shoes','t','Active'),(3,'Pants','t','Active'),(4,'Shirt','t','InActive'),(5,'Coat','t','InActive');
+INSERT INTO `Product` VALUES (1,'Hat','https://i5.walmartimages.com/asr/7fbd346b-d208-4a39-a7d8-f2d13654e51b.73f80f63f6aeefcb5096ebab8082430e.jpeg','Active'),(2,'Shoes','https://i5.walmartimages.com/asr/22b9f33f-da90-42b1-a917-74757e49d6de.017a1b26f54becd306147405fb789b51.jpeg','Active'),(3,'Pants','https://i5.walmartimages.com/asr/78e835c3-2907-4531-9719-c1fb34fb6ba1.558825a7ffc5d427bbb292cb8c949534.jpeg','Active'),(4,'Shirt','https://i5.walmartimages.com/asr/022e5852-3592-44f9-9dfd-4152358a9238.1bad9a679f3d773ac0d2f17972456546.jpeg','InActive'),(5,'Coat','https://i5.walmartimages.com/asr/189d22e5-9bce-434c-98be-514fa026f5fd.94709b328059fab7bbffc6687574eeda.jpeg','InActive');
 /*!40000 ALTER TABLE `Product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

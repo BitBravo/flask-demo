@@ -1,5 +1,11 @@
 import type { DraggableProvided } from 'react-beautiful-dnd';
 
+export enum DATA_STATES {
+    waiting = 'WAITING',
+    loaded = 'LOADED',
+    error = 'ERROR'
+};
+
 export interface Order {
     OrderID: number;
     CustomerID: number;
@@ -8,12 +14,12 @@ export interface Order {
 }
 
 export interface OrderData {
-  Queued: Order[],
-  InProgress: Order[],
-  QA: Order[],
+    Queued: Order[],
+    InProgress: Order[],
+    QA: Order[],
 }
 
-export interface DraggableItemProps extends Order{
+export interface DraggableItemProps extends Order {
     draggableProvided: DraggableProvided;
     removeOrder: (order: Order) => void;
 }
@@ -32,4 +38,16 @@ export interface HeaderLink {
 
 export interface HeaderProps {
     links: HeaderLink[];
+}
+
+export enum ProductStatus {
+    Active = "Active",
+    InActive = "InActive"
+}
+
+export interface Product {
+    ProductID: number;
+    ProductName: string;
+    ProductPhotoURL: string;
+    ProductStatus: ProductStatus;
 }
